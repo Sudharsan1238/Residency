@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap');
+
+:root {
+  --dark-blue: #0F172A;
+  --gold: #C8A97E;
+  --white: #F8FAFC;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: white;
+  color: darkblue;
+  line-height: 1.6;
+}
+
+.navbar {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  background: darkblue;
+  padding: 1rem 2rem;
+  position:sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-family:Arial;
+  font-size: 1.8rem;
+  color:gold;
+}
+
+.nav-links {
+  list-style:none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color:white;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: gold;
+}
+
+
+.hero {
+  background: url('images/hotel-hero.jpg') center/cover no-repeat;
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.6);
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.tagline {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-buttons .btn {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  margin: 0.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn {
+  background: white;
+  color: darkblue;
+}
+
+.btn.gold {
+  background: gold;
+  color: darkblue;
+}
+
+.btn:hover {
+  transform: 1.05;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.rating {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: gold;
+}
+
+
+.intro {
+  padding: 3rem 2rem;
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+}
+
+.intro h2 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.intro p {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+
+footer {
+  background: darkblue;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .tagline {
+    font-size: 1rem;
+  }
+  .nav-links {
+    gap: 1rem;
+  }
+}
+
+.rooms { padding: 3rem 2rem; }
+.rooms h2 {
+  text-align: center; font-family: 'Playfair Display', serif;
+  margin-bottom: 2rem;
+}
+.room-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+.room-card {
+  background: white; border-radius: 10px; overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s ease;
+  text-align: center;
+}
+.room-card:hover { transform: translateY(-5px); }
+.room-card h3 {
+  padding: 1rem; font-family: 'Playfair Display', serif;
+}
+.room-images {
+  display: flex; gap: 0.5rem; padding: 1rem; justify-content: center;
+}
+.room-images img {
+  width: 30%; border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.book-option { text-align: center; padding: 1rem; }
+.book-option .btn {
+  display: inline-block; padding: 0.6rem 1.2rem; border-radius: 25px;
+  text-decoration: none; font-weight: 500;
+  background: gold; color: darkblue;
+  transition: all 0.3s ease;
+}
+.book-option .btn:hover {
+  background: #b58a63; transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.confirm-box {
+  display: none; margin: 1rem auto; padding: 1rem; max-width: 400px;
+  text-align: center; background: darkblue; color: white;
+  border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  font-weight: 500;
+}
+
+.confirm-box:target { display: block; }
+.confirm-box .btn {
+  display: inline-block; margin-top: 1rem; padding: 0.6rem 1.2rem;
+  border-radius: 25px; text-decoration: none; font-weight: 500;
+  background: gold; color:darkblue;
+  transition: all 0.3s ease;
+}
+.confirm-box .btn:hover { background: #b58a63; }
+
+footer {
+  background:darkblue; color: white;
+  text-align: center; padding: 1rem; margin-top: 2rem;
+}
+.success-message {
+  display: none;
+  margin-top: 1.5rem;
+  text-align: center;
+  font-weight: 600;
+  color: gold;
+  background: darkblue;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+#success:target {
+  display: block;
+}
+
+.success-message .btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 500;
+  background: gold;
+  color: darkblue;
+  transition: all 0.3s ease;
+}
+.success-message .btn:hover {
+  background: #b58a63;
+}
+
+.about {
+  padding: 3rem 2rem;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+.about h2 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 1rem;
+}
+
+.about p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+
+.about {
+  padding: 3rem 2rem;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+.about h2 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 1rem;
+}
+
+.about p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.ratings {
+  margin-top: 2rem;
+}
+
+.ratings h3 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 1rem;
+}
+
+.stars {
+  font-size: 2rem;
+  color: var(--gold); 
+  margin-bottom: 0.5rem;
+}
